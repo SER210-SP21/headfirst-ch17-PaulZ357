@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 class TasksViewModel(val dao: TaskDao) : ViewModel() {
     var newTaskName = ""
-    private val tasks = dao.getAll()
+    val tasks = dao.getAll()
     // Transformations class is deprecated so a new implementation is needed.
     val tasksString = tasks.map {
             tasks -> formatTasks(tasks)
